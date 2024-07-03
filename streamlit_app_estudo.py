@@ -33,3 +33,5 @@ if st.button("clica"):
 # Botão para parar o incremento do contador
 if st.button("para"):
     st.session_state['executando'] = False
+
+st.write(f"vc clicou esse tanto {st.session_state['contador']}")
