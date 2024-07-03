@@ -13,4 +13,4 @@ if 'contador' not in st.session_state:
 if st.button("Se gostou, dá um joinha!"):
     st.session_state['contador'] += 1
 
-st.write("vc clicou esse tanto {st.session_state['contador']}")
+st.write(f"vc clicou esse tanto {st.session_state['contador']}")
