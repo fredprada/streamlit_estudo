@@ -19,7 +19,7 @@ def incrementar_contador():
         st.experimental_rerun()
 
 # Botão para iniciar o incremento do contador
-if st.button("Se gostou, dá um joinha!"):
+if st.button("clica"):
     incrementar_contador()
 
 st.write(f"vc clicou esse tanto {st.session_state['contador']}")
