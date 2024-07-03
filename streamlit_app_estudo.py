@@ -1,7 +1,7 @@
 import streamlit as st
 import time
-import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 # Configurar o layout para "wide"
 st.set_page_config(layout="wide")
@@ -33,14 +33,12 @@ def incrementar_contador(seconds):
         x_data.append(i)
         y_data.append(np.random.rand())  # Adicionar valor aleatório
 
-        # Criar gráfico
-        fig, ax = plt.subplots()
-        ax.plot(x_data, y_data, marker='o')
-        ax.set_xlim(0, 60)
-        ax.set_ylim(0, 1)
-
-        # Exibir gráfico
-        chart_placeholder.pyplot(fig)
+        # Criar gráfico usando pandas e Streamlit
+        data = pd.DataFrame({
+            'x': x_data,
+            'y': y_data
+        })
+        chart_placeholder.line_chart(data.set_index('x'))
         
         time.sleep(interval)
         
