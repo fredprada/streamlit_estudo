@@ -25,4 +25,8 @@ def incrementar_contador():
 if st.button("clica"):
     incrementar_contador()
 
+# Botão para resetar contador
+if st.button('resetar'):
+    st.session_state['contador'] = 0
+    
 st.write(f"vc clicou esse tanto {st.session_state['contador']}")
