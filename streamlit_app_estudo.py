@@ -22,23 +22,29 @@ def incrementar_contador(seconds):
     interval = seconds / 60  # Intervalo de tempo em segundos para cada incremento
 
     # Dados iniciais para o gráfico
-    x_data = []
-    y_data = []
+    x_data = list(range(61))
+    y_data = [None] * 61  # Inicializar com Nones
+
+    # Desenhar o gráfico inicial com limites fixos
+    initial_data = pd.DataFrame({
+        'x': x_data,
+        'y': y_data
+    })
+    chart = chart_placeholder.line_chart(initial_data.set_index('x'))
 
     for i in range(61):
         st.session_state['contador'] = i
         placeholder.write(f"vc clicou esse tanto {st.session_state['contador']}")
         
         # Atualizar dados do gráfico
-        x_data.append(i)
-        y_data.append(np.random.rand())  # Adicionar valor aleatório
-
+        y_data[i] = np.random.rand()  # Adicionar valor aleatório
+        
         # Criar gráfico usando pandas e Streamlit
         data = pd.DataFrame({
             'x': x_data,
             'y': y_data
         })
-        chart_placeholder.line_chart(data.set_index('x'))
+        chart.line_chart(data.set_index('x'))
         
         time.sleep(interval)
         
@@ -50,4 +56,4 @@ if st.button("clica"):
     incrementar_contador(seconds)
 
 # Exibir valor atual do contador
-st.write(f"vc clicou esse tanto {st.session_state['contador']}")
+st.write(f"show")
