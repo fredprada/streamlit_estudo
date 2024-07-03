@@ -5,8 +5,12 @@ st.set_page_config(layout="wide")
 
 st.write('testeeeee')
 
-contador=0
-if st.button("se gostou da um joinhao"):
-    contador = ++
-    
-st.write('vc clicou esse tanto', contador)
+# Inicializar o contador no estado do Streamlit
+if 'contador' not in st.session_state:
+    st.session_state['contador'] = 0
+
+# Botão para incrementar o contador
+if st.button("Se gostou, dá um joinha!"):
+    st.session_state['contador'] += 1
+
+st.write("vc clicou esse tanto {st.session_state['contador']}")
