@@ -4,9 +4,8 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 st.write('testeeeee')
-
-st.button("Reset", type="primary")
+contador=0
 if st.button("se gostou da um joinhao"):
-    st.write("ai sim")
-else:
-    st.write("Goodbye")
+    contador = +1
+    
+st.write(contador)
