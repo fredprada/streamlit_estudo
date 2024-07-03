@@ -8,9 +8,9 @@ st.write('testeeeee')
 
 seconds = st.selectbox('Segundos da animação', [5, 10, 20])
 
-# Botão para resetar contador
-if st.button('resetar'):
-    st.session_state['contador'] = 0
+# # Botão para resetar contador
+# if st.button('resetar'):
+#     st.session_state['contador'] = 0
 
 # Inicializar o contador no estado do Streamlit
 if 'contador' not in st.session_state:
@@ -18,6 +18,7 @@ if 'contador' not in st.session_state:
 
 # Função para incrementar o contador de 1 em 1 até 60, intervalado de acordo com `seconds`
 def incrementar_contador(seconds):
+    st.session_state['contador'] = 0
     placeholder = st.empty()
     interval = seconds / 60  # Intervalo de tempo em segundos para cada incremento
     for i in range(st.session_state['contador'], 61):
