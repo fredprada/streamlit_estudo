@@ -16,7 +16,7 @@ def incrementar_contador():
     for i in range(st.session_state['contador'], 61):
         st.session_state['contador'] = i
         placeholder.write(f"vc clicou esse tanto {st.session_state['contador']}")
-        time.sleep(0.1)
+        time.sleep(0.2)
         # Utilize o placeholder para evitar st.experimental_rerun()
         if st.session_state['contador'] >= 60:
             break
