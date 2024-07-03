@@ -4,8 +4,9 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 st.write('testeeeee')
+
 contador=0
 if st.button("se gostou da um joinhao"):
-    contador = +1
+    contador = ++
     
-st.write(contador)
+st.write('vc clicou esse tanto', contador)
